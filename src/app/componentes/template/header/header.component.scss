@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+
+  .a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo {
+    max-height: 54px;
+  }
+
+  .title-group {
+    padding-left: 25px;
+  }
+}
