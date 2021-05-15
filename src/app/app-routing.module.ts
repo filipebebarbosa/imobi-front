@@ -4,7 +4,9 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
 import {HomeComponent} from './views/home/home.component';
+
 import {ImoveisCrudComponent} from './views/imoveis-crud/imoveis-crud.component';
+import {ImovelCreateComponent} from './componentes/imovel/imovel-create/imovel-create.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,9 @@ const routes: Routes = [
   }, {
     path: 'imoveis',
     component: ImoveisCrudComponent
+  }, {
+    path: 'imoveis/create',
+    component: ImovelCreateComponent
   }
 ];
 

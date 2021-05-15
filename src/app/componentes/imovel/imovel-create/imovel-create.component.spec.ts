@@ -1,20 +1,20 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {FooterComponent} from './footer.component';
+import {ImovelCreateComponent} from './imovel-create.component';
 
-describe('FooterComponent', () => {
-  let component: FooterComponent;
-  let fixture: ComponentFixture<FooterComponent>;
+describe('ImovelCreateComponent', () => {
+  let component: ImovelCreateComponent;
+  let fixture: ComponentFixture<ImovelCreateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FooterComponent]
+      declarations: [ImovelCreateComponent]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FooterComponent);
+    fixture = TestBed.createComponent(ImovelCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

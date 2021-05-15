@@ -9,10 +9,15 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
-import {NavComponent} from './componentes/template/nav/nav.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+
+// requests http
+import {HttpClientModule} from '@angular/common/http';
+
+// componentes
+import {NavComponent} from './componentes/template/nav/nav.component';
 
 // componente templates
 import {HeaderComponent} from './componentes/template/header/header.component';
@@ -21,6 +26,8 @@ import {FooterComponent} from './componentes/template/footer/footer.component';
 // views
 import {HomeComponent} from './views/home/home.component';
 import {ImoveisCrudComponent} from './views/imoveis-crud/imoveis-crud.component';
+import {ImovelCreateComponent} from './componentes/imovel/imovel-create/imovel-create.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +37,7 @@ import {ImoveisCrudComponent} from './views/imoveis-crud/imoveis-crud.component'
     FooterComponent,
     HomeComponent,
     ImoveisCrudComponent,
+    ImovelCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,10 +48,13 @@ import {ImoveisCrudComponent} from './views/imoveis-crud/imoveis-crud.component'
     MatCardModule,
     MatButtonModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSnackBarModule,
+    HttpClientModule,
   ],
   providers: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule {
 }
