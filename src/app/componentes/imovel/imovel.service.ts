@@ -23,7 +23,17 @@ export class ImovelService {
 
   // @ts-ignore
   create(imovel: Imovel): Observable<Imovel> {
-    return this.http.post<Imovel>(ImovelConstants.baseurl + ImovelConstants.produtos, imovel);
+    return this.http.post<Imovel>(ImovelConstants.baseurl + ImovelConstants.imoveis, imovel);
+  }
+
+  // tslint:disable-next-line:typedef
+  cepRecovery(cep) {
+    return this.http.get(ImovelConstants.viaCep + cep + '/json/');
+  }
+
+  // tslint:disable-next-line:typedef
+  getListImoveis() {
+    return this.http.get(ImovelConstants.baseurl + ImovelConstants.imoveis);
   }
 
 }

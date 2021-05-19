@@ -1,4 +1,54 @@
-<p>imovel-create works!</p>
+<div class="imovel-create-form">
+  <mat-card class="mat-elevation-z3">
+    <mat-card-title class="title">Novo Imóvel</mat-card-title>
 
+    <div class="container-fluid">
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date cepfind">
+          <input [(ngModel)]="imovel.cep" [ngModelOptions]="{standalone: true}" id="cep" matInput placeholder="CEP"
+                 type="number">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="btn-group btn-cep-find">
+          <button (click)="recoverCep()" class="btn btn-primary" mat-raised-button>Buscar</button>
+        </div>
+      </div>
+    </div>
 
+    <form>
+      <!--      <mat-form-field class="mat-elevation-z1 input-date">-->
+      <!--        <input [(ngModel)]="imovel.cep" id="cepForm" matInput placeholder="CEP">-->
+      <!--      </mat-form-field>-->
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date logradouro">
+          <input [(ngModel)]="imovel.logradouro" id="logradouro" matInput placeholder="Rua/Logradouro">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date numero">
+          <input [(ngModel)]="imovel.numero" id="numero" matInput placeholder="Número">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date complemento">
+          <input [(ngModel)]="imovel.complemento" id="complemento" matInput placeholder="Complemento">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date bairro">
+          <input [(ngModel)]="imovel.bairro" id="bairro" matInput placeholder="Bairro">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date localidade">
+          <input [(ngModel)]="imovel.localidade" id="localidade" matInput placeholder="Cidade">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date uf">
+          <input [(ngModel)]="imovel.uf" id="uf" matInput placeholder="UF">
+        </mat-form-field>
+      </div>
+    </form>
 
+    <div class="btn-group">
+      <button (click)="createImovel()" class="btn btn-primary" mat-raised-button>Salvar</button>
+      <button class="btn btn-danger" mat-raised-button>Cancelar</button>
+    </div>
+  </mat-card>
+</div>

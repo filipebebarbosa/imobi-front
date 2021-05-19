@@ -1,5 +1,13 @@
 export interface Imovel {
   id?: number;
-  name: string;
-  price: number;
+  cep: number;
+  numero: number;
+  logradouro: string;
+  complemento: string;
+  bairro: string;
+  quartos: number;
+  valorAluguel: number;
+  localidade: string;
+  uf: string;
+  situacao: string;
 }

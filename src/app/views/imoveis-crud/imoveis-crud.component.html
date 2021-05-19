@@ -2,7 +2,87 @@
   <mat-card-title class="title">Lista de Imóveis</mat-card-title>
 </mat-card>
 
-<div class="mat-primary">
+<div class="btn-group">
   <button (click)="navigateToImovelCreate()" class="btn btn-primary">Novo</button>
 </div>
+
+<div class="mat-elevation-z8 itens-table">
+  <table [dataSource]="imoveis" aria-label="Elements" class="full-width-table" mat-table>
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell>#</th>
+      <td *matCellDef="let row" mat-cell>{{row.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="logradouro">
+      <th *matHeaderCellDef mat-header-cell>Rua</th>
+      <td *matCellDef="let row" mat-cell>{{row.logradouro}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="numero">
+      <th *matHeaderCellDef mat-header-cell>Número</th>
+      <td *matCellDef="let row" mat-cell>{{row.numero}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="bairro">
+      <th *matHeaderCellDef mat-header-cell>Bairro</th>
+      <td *matCellDef="let row" mat-cell>{{row.bairro}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="quartos">
+      <th *matHeaderCellDef mat-header-cell>Quartos</th>
+      <td *matCellDef="let row" mat-cell>{{row.quartos}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="valorAluguel">
+      <th *matHeaderCellDef mat-header-cell>Valor Aluguel</th>
+      <td *matCellDef="let row" mat-cell>{{row.valorAluguel | currency: 'BRL'}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="cidade">
+      <th *matHeaderCellDef mat-header-cell>Cidade</th>
+      <td *matCellDef="let row" mat-cell>{{row.cidade}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="uf">
+      <th *matHeaderCellDef mat-header-cell>UF</th>
+      <td *matCellDef="let row" mat-cell>{{row.uf}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="situacao">
+      <th *matHeaderCellDef mat-header-cell>Situação</th>
+      <td *matCellDef="let row" mat-cell>{{row.situacao}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="action">
+      <th *matHeaderCellDef mat-header-cell class="teste1">Ação</th>
+      <td *matCellDef="let row" mat-cell class="teste2">
+        <a>
+          <i class="material-icons edit-icon">
+            edit
+          </i>
+        </a>
+        <a>
+          <i class="material-icons delete-icon">
+            delete
+          </i>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>
+</div>
+
+
 
