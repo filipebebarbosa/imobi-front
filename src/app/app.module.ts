@@ -30,6 +30,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 // componentes
 import {NavComponent} from './componentes/template/nav/nav.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 // componente templates
 import {HeaderComponent} from './componentes/template/header/header.component';
@@ -41,6 +42,7 @@ import {ImoveisCrudComponent} from './views/imoveis-crud/imoveis-crud.component'
 import {ImovelCreateComponent} from './componentes/imovel/imovel-create/imovel-create.component';
 import {ImovelReadComponent} from './componentes/imovel/imovel-read/imovel-read.component';
 import {ImovelUpdateComponent} from './componentes/imovel/imovel-update/imovel-update.component';
+import {ImovelDeleteComponent} from './componentes/imovel/imovel-delete/imovel-delete.component';
 
 registerLocaleData(localePt);
 
@@ -56,6 +58,7 @@ registerLocaleData(localePt);
     ImovelCreateComponent,
     ImovelReadComponent,
     ImovelUpdateComponent,
+    ImovelDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ registerLocaleData(localePt);
     MatPaginatorModule,
     MatSortModule,
     NgxCurrencyModule,
-    NgxMaskModule
+    NgxMaskModule,
+    MatTabsModule
   ],
   providers: [AppComponent, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],

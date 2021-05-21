@@ -5,6 +5,5 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   imports: [
-    NgxMaskModule.forRoot(),
-  ],
+    NgxMaskModule.forRoot()]
 })

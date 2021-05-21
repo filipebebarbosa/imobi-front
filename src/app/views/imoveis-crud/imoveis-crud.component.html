@@ -47,7 +47,7 @@
     <!-- Name Column -->
     <ng-container matColumnDef="cidade">
       <th *matHeaderCellDef mat-header-cell>Cidade</th>
-      <td *matCellDef="let row" mat-cell>{{row.cidade}}</td>
+      <td *matCellDef="let row" mat-cell>{{row.localidade}}</td>
     </ng-container>
 
     <!-- Name Column -->
@@ -71,7 +71,7 @@
             edit
           </i>
         </a>
-        <a>
+        <a class="delete-btn" routerLink="/imoveis/delete/{{row.id}}">
           <i class="material-icons delete-icon">
             delete
           </i>

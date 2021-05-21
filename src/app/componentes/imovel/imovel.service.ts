@@ -17,7 +17,8 @@ export class ImovelService {
     this.snackBar.open(msg, 'X', {
       duration: 2000,
       horizontalPosition: 'right',
-      verticalPosition: 'top'
+      verticalPosition: 'top',
+      panelClass: ['msg-sucess']
     });
   }
 
@@ -46,4 +47,8 @@ export class ImovelService {
     return this.http.put<Imovel>(url, imovel);
   }
 
+  delete(id: number): Observable<Imovel> {
+    const url = `${ImovelConstants.baseurl}${ImovelConstants.imoveis}/${id}`;
+    return this.http.delete<Imovel>(url);
+  }
 }

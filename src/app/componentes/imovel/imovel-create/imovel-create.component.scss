@@ -1,4 +1,6 @@
 .imovel-create-form {
+  height: 600px;
+
 
   .container-fluid {
     display: flex;
@@ -15,6 +17,9 @@
   }
 
   form {
+    #mat-card{
+      background-color: red;
+    }
 
     .row {
       white-space: normal;

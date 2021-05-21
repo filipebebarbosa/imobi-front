@@ -8,6 +8,7 @@ import {HomeComponent} from './views/home/home.component';
 import {ImoveisCrudComponent} from './views/imoveis-crud/imoveis-crud.component';
 import {ImovelCreateComponent} from './componentes/imovel/imovel-create/imovel-create.component';
 import {ImovelUpdateComponent} from './componentes/imovel/imovel-update/imovel-update.component';
+import {ImovelDeleteComponent} from './componentes/imovel/imovel-delete/imovel-delete.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   }, {
     path: 'imoveis/update/:id',
     component: ImovelUpdateComponent
+  }, {
+    path: 'imoveis/delete/:id',
+    component: ImovelDeleteComponent
   }
 ];
 

@@ -10,11 +10,13 @@ import {Imovel} from './imovel.model';
 })
 export class ImoveisCrudComponent implements OnInit {
 
+  constructor(private router: Router, private imovelService: ImovelService) {
+  }
+
   imoveis: Imovel;
   displayedColumns = ['id', 'logradouro', 'numero', 'bairro', 'quartos', 'valorAluguel', 'cidade', 'uf', 'situacao', 'action'];
 
-  constructor(private router: Router, private imovelService: ImovelService) {
-  }
+  display = false;
 
   ngOnInit(): void {
     this.getListImoveis();
@@ -33,4 +35,7 @@ export class ImoveisCrudComponent implements OnInit {
     );
   }
 
+  teste(): void {
+    this.display = true;
+  }
 }
