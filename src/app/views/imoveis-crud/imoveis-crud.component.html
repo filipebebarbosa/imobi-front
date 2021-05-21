@@ -64,9 +64,9 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="action">
-      <th *matHeaderCellDef mat-header-cell class="teste1">Ação</th>
-      <td *matCellDef="let row" mat-cell class="teste2">
-        <a>
+      <th *matHeaderCellDef class="teste1" mat-header-cell>Ação</th>
+      <td *matCellDef="let row" class="teste2" mat-cell>
+        <a class="edit-btn" routerLink="/imoveis/update/{{row.id}}">
           <i class="material-icons edit-icon">
             edit
           </i>

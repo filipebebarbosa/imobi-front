@@ -22,7 +22,6 @@ export class ImoveisCrudComponent implements OnInit {
 
   navigateToImovelCreate(): void {
     this.router.navigate(['imoveis/create']);
-    console.log('teste!!');
   }
 
   getListImoveis(): void {
@@ -30,7 +29,6 @@ export class ImoveisCrudComponent implements OnInit {
     this.imovelService.getListImoveis().subscribe(imoveis => {
         // @ts-ignore
         this.imoveis = imoveis;
-        console.log({imoveis});
       }
     );
   }

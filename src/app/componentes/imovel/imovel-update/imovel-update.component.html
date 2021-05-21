@@ -1,34 +1,29 @@
 <div class="imovel-create-form">
   <mat-card class="mat-elevation-z3">
-    <mat-card-title class="title">Novo Imóvel</mat-card-title>
-
-    <div class="container-fluid">
-      <div class="row">
-        <mat-form-field class="mat-elevation-z1 input-date cepfind">
-          <input [(ngModel)]="imovel.cep" [ngModelOptions]="{standalone: true}"
-                 ame="cep" id="cep" matInput
-                 n
-                 placeholder="CEP"
-                 type="number">
-        </mat-form-field>
-      </div>
-      <div class="row">
-        <div class="btn-group btn-cep-find">
-          <button (click)="recoverCep()" class="btn btn-primary" mat-raised-button>Buscar</button>
-        </div>
-      </div>
-    </div>
+    <mat-card-title class="title">Editar Imóvel</mat-card-title>
 
     <form>
-      <div class="row">
+
+      <div class="row col-md-4-3">
+        <mat-form-field class="mat-elevation-z1 input-date cep">
+          <input [(ngModel)]="imovel.cep"
+                 [maxLength]="9"
+                 id="cep"
+                 matInput
+                 name="cep"
+                 placeholder="Cep">
+        </mat-form-field>
+
         <mat-form-field class="mat-elevation-z1 input-date logradouro">
           <input [(ngModel)]="imovel.logradouro" id="logradouro" matInput name="logradouro"
                  placeholder="Rua/Logradouro">
         </mat-form-field>
+
         <mat-form-field class="mat-elevation-z1 input-date numero">
           <input [(ngModel)]="imovel.numero" id="numero" matInput name="numero" placeholder="Número">
         </mat-form-field>
       </div>
+
       <div class="row">
         <mat-form-field class="mat-elevation-z1 input-date complemento">
           <input [(ngModel)]="imovel.complemento" id="complemento" matInput name="complemento"
@@ -56,11 +51,13 @@
                  name="valorAluguel" placeholder="Valor">
         </mat-form-field>
       </div>
+
     </form>
 
     <div class="btn-group">
-      <button (click)="createImovel()" class="btn btn-primary" mat-raised-button>Salvar</button>
+      <button (click)="updateImovel()" class="btn btn-primary" mat-raised-button>Salvar</button>
       <button (click)="cancel()" class="btn btn-danger" mat-raised-button>Cancelar</button>
     </div>
+
   </mat-card>
 </div>

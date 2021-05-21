@@ -27,21 +27,35 @@ export class ImovelCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   createImovel(): void {
     this.imovelService.create(this.imovel).subscribe((response) => {
-      console.log({response});
-      this.imovelService.showMessage('Operação realizada com sucesso!');
-      this.router.navigate(['/home']);
+      if (response) {
+        this.showMsg('Operação realizada com sucesso!');
+        return this.router.navigate(['/imoveis']);
+      } else {
+        this.showMsg('Ops, não foi possível salvar o imóvel agora!');
+      }
     });
   }
 
   recoverCep(): void {
     console.log('chamando');
     this.imovelService.cepRecovery(this.imovel.cep).subscribe((response) => {
+      this.imovel = response;
+      this.showMsg('Cep recuperado com sucesso!');
       console.log({response});
     });
+  }
+
+  showMsg(msg): void {
+    this.imovelService.showMessage(msg);
+  }
+
+  cancel(): void {
+    this.router.navigate(['/imoveis']);
   }
 
 }

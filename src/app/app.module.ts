@@ -20,6 +20,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 
+import {NgxCurrencyModule} from 'ngx-currency';
+import {NgxMaskModule} from 'ngx-mask';
+
 import {registerLocaleData} from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 // requests http
@@ -37,6 +40,7 @@ import {HomeComponent} from './views/home/home.component';
 import {ImoveisCrudComponent} from './views/imoveis-crud/imoveis-crud.component';
 import {ImovelCreateComponent} from './componentes/imovel/imovel-create/imovel-create.component';
 import {ImovelReadComponent} from './componentes/imovel/imovel-read/imovel-read.component';
+import {ImovelUpdateComponent} from './componentes/imovel/imovel-update/imovel-update.component';
 
 registerLocaleData(localePt);
 
@@ -51,6 +55,7 @@ registerLocaleData(localePt);
     ImoveisCrudComponent,
     ImovelCreateComponent,
     ImovelReadComponent,
+    ImovelUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +75,8 @@ registerLocaleData(localePt);
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    NgxCurrencyModule,
+    NgxMaskModule
   ],
   providers: [AppComponent, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent],

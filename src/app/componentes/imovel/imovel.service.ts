@@ -26,14 +26,24 @@ export class ImovelService {
     return this.http.post<Imovel>(ImovelConstants.baseurl + ImovelConstants.imoveis, imovel);
   }
 
-  // tslint:disable-next-line:typedef
-  cepRecovery(cep) {
-    return this.http.get(ImovelConstants.viaCep + cep + '/json/');
+  cepRecovery(cep: number): Observable<any> {
+    const url = `${ImovelConstants.viaCep}${cep}/json/`;
+    return this.http.get<any>(url);
   }
 
-  // tslint:disable-next-line:typedef
-  getListImoveis() {
-    return this.http.get(ImovelConstants.baseurl + ImovelConstants.imoveis);
+  getListImoveis(): Observable<Imovel[]> {
+    const url = `${ImovelConstants.baseurl}${ImovelConstants.imoveis}`;
+    return this.http.get<Imovel[]>(url);
+  }
+
+  getImovelById(id: number): Observable<Imovel> {
+    const url = `${ImovelConstants.baseurl}${ImovelConstants.imoveis}/${id}`;
+    return this.http.get<Imovel>(url);
+  }
+
+  update(imovel: Imovel): Observable<Imovel> {
+    const url = `${ImovelConstants.baseurl + ImovelConstants.imoveis}/${imovel.id}`;
+    return this.http.put<Imovel>(url, imovel);
   }
 
 }
