@@ -1,0 +1,66 @@
+<div class="imovel-create-form">
+  <mat-card class="mat-elevation-z3">
+    <mat-card-title class="title">Novo Imóvel</mat-card-title>
+
+    <div class="container-fluid">
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date cepfind">
+          <input [(ngModel)]="imovel.cep" [ngModelOptions]="{standalone: true}"
+                 ame="cep" id="cep" matInput
+                 n
+                 placeholder="CEP"
+                 type="number">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="btn-group btn-cep-find">
+          <button (click)="recoverCep()" class="btn btn-primary" mat-raised-button>Buscar</button>
+        </div>
+      </div>
+    </div>
+
+    <form>
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date logradouro">
+          <input [(ngModel)]="imovel.logradouro" id="logradouro" matInput name="logradouro"
+                 placeholder="Rua/Logradouro">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date numero">
+          <input [(ngModel)]="imovel.numero" id="numero" matInput name="numero" placeholder="Número">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date complemento">
+          <input [(ngModel)]="imovel.complemento" id="complemento" matInput name="complemento"
+                 placeholder="Complemento">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date bairro">
+          <input [(ngModel)]="imovel.bairro" id="bairro" matInput name="bairro" placeholder="Bairro">
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="mat-elevation-z1 input-date localidade">
+          <input [(ngModel)]="imovel.localidade" id="localidade" matInput name="localidade" placeholder="Cidade">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date uf">
+          <input [(ngModel)]="imovel.uf" id="uf" matInput name="uf" placeholder="UF">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date situacao">
+          <input [(ngModel)]="imovel.situacao" id="situacao" matInput name="situacao" placeholder="Situação">
+        </mat-form-field>
+        <mat-form-field class="mat-elevation-z1 input-date valorAluguel">
+          <input [(ngModel)]="imovel.valorAluguel"
+                 [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                 currencyMask id="valorAluguel" matInput
+                 name="valorAluguel" placeholder="Valor">
+        </mat-form-field>
+      </div>
+    </form>
+
+    <div class="btn-group">
+      <button (click)="createImovel()" class="btn btn-primary" mat-raised-button>Salvar</button>
+      <button (click)="cancel()" class="btn btn-danger" mat-raised-button>Cancelar</button>
+    </div>
+  </mat-card>
+</div>

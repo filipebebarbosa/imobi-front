@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to right, #339dfd, #00b5ff, #00caf9, #00dbe1, #00e8c2, #4dedb5, #72f2a8, #91f69c, #9bf8a3, #a5faab, #aefbb2, #b7fdba);
+
+  .a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .logo {
+    max-height: 54px;
+  }
+
+  .title-group {
+    padding-left: 25px;
+  }
+}
