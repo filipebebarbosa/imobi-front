@@ -3,6 +3,7 @@ import {ImovelService} from '../imovel.service';
 import {Imovel} from '../../../views/imoveis-crud/imovel.model';
 import {Router} from '@angular/router';
 import {MenssagensComponent} from '../../menssagens/menssagens.component';
+import {HeaderService} from '../../template/header/header.service';
 
 @Component({
   selector: 'app-imovel-create',
@@ -26,7 +27,13 @@ export class ImovelCreateComponent implements OnInit {
 
   constructor(private imovelService: ImovelService,
               private router: Router,
-              private menssagesComponent: MenssagensComponent) {
+              private menssagesComponent: MenssagensComponent,
+              private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Criar Imóvel',
+      icon: '',
+      routerUrl: ''
+    };
   }
 
   ngOnInit(): void {

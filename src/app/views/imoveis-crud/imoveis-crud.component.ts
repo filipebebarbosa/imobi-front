@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ImovelService} from '../../componentes/imovel/imovel.service';
 import {Imovel} from './imovel.model';
+import {HeaderService} from '../../componentes/template/header/header.service';
 
 @Component({
   selector: 'app-imoveis-crud',
@@ -10,7 +11,12 @@ import {Imovel} from './imovel.model';
 })
 export class ImoveisCrudComponent implements OnInit {
 
-  constructor(private router: Router, private imovelService: ImovelService) {
+  constructor(private router: Router, private imovelService: ImovelService, private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Lista de imóveis',
+      icon: '',
+      routerUrl: '/imoveis'
+    };
   }
 
   imoveis: Imovel;
@@ -27,7 +33,6 @@ export class ImoveisCrudComponent implements OnInit {
   }
 
   getListImoveis(): void {
-    console.log('carregaLista');
     this.imovelService.getListImoveis().subscribe(imoveis => {
         // @ts-ignore
         this.imoveis = imoveis;
