@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ImovelService} from '../imovel.service';
 import {Imovel} from '../../../views/imoveis-crud/imovel.model';
 import {Router} from '@angular/router';
+import {MenssagensComponent} from '../../menssagens/menssagens.component';
 
 @Component({
   selector: 'app-imovel-create',
@@ -23,7 +24,9 @@ export class ImovelCreateComponent implements OnInit {
     uf: '',
   };
 
-  constructor(private imovelService: ImovelService, private router: Router) {
+  constructor(private imovelService: ImovelService,
+              private router: Router,
+              private menssagesComponent: MenssagensComponent) {
   }
 
   ngOnInit(): void {
@@ -45,13 +48,13 @@ export class ImovelCreateComponent implements OnInit {
     console.log('chamando');
     this.imovelService.cepRecovery(this.imovel.cep).subscribe((response) => {
       this.imovel = response;
-      this.showMsg('Cep recuperado com sucesso!');
+      this.showMsg('CEP recuperado com sucesso!');
       console.log({response});
     });
   }
 
   showMsg(msg): void {
-    this.imovelService.showMessage(msg);
+    this.menssagesComponent.showMessage(msg);
   }
 
   cancel(): void {

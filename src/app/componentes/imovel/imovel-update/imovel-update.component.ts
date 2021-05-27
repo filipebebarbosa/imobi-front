@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ImovelService} from '../imovel.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Imovel} from '../../../views/imoveis-crud/imovel.model';
+import {MenssagensComponent} from '../../menssagens/menssagens.component';
 
 @Component({
   selector: 'app-imovel-update',
@@ -13,7 +14,8 @@ export class ImovelUpdateComponent implements OnInit {
   constructor(
     private imovelService: ImovelService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private menssagesComponent: MenssagensComponent) {
   }
 
   imovel: Imovel;
@@ -45,7 +47,7 @@ export class ImovelUpdateComponent implements OnInit {
   }
 
   showMsg(msg): void {
-    this.imovelService.showMessage(msg);
+    this.menssagesComponent.showMessage(msg);
   }
 
 }

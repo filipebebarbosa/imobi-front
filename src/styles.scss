@@ -8,12 +8,17 @@ html, body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
   }
 
-  .msg-sucess {
-    background-color: green;
-  }
-
 }
 
+.msg-sucess {
+  background-color: green;
+  color: white;
+}
+
+.msg-error {
+  background-color: red;
+  color: white;
+}
 
 .v-middle {
   vertical-align: middle;

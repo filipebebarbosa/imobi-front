@@ -58,7 +58,7 @@ registerLocaleData(localePt);
     ImovelCreateComponent,
     ImovelReadComponent,
     ImovelUpdateComponent,
-    ImovelDeleteComponent,
+    ImovelDeleteComponent
   ],
   imports: [
     BrowserModule,
